@@ -1,18 +1,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# NG FireStarter: Angular + Firebase PWA Starter
+# ngFireStarter: Angular + Firebase + Angular Material PWA Starter
 
 An Angular PWA starter powered by Firebase and Angular.
 
 - Demo (coming soon)
 
-
 ## Planned Feature Wishlist (TODO)
 
 *Stack*
 
-- [x] Angular 5.1 + [Angular CLI 1.6](https://github.com/angular/angular-cli) version 1.6.0.
-- [ ] Angular Material
+- [x] Angular 5.1 + [Angular CLI 1.6](https://github.com/angular/angular-cli)
+- [x] Angular Material
 - [ ] PWA Support (service worker + app manifest)
 - [ ] Firebase Firestore + AngularFire2
 - [ ] NgRX for state management

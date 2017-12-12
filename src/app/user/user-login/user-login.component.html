@@ -1,0 +1,39 @@
+<div *ngIf="!(auth.user | async); else alreadyLoggedIn">
+
+  <mat-card>
+      <mat-card-title>Social Login</mat-card-title>
+
+      <button mat-raised-button color="primary" (click)="signInWithGoogle()" class="">
+        <i class="fa fa-google fa-lg"></i> Login with Google
+      </button>
+
+      <button mat-raised-button color="accent" (click)="signInWithFacebook()" class="" disabled>
+        <i class="fa fa-facebook fa-lg"></i> Login with Facebook
+      </button>
+    </mat-card>
+
+    <hr>
+
+    <!--
+    <mat-card>
+      <h3>Anonymous Login</h3>
+      <button mat-raised-button (click)="signInAnonymously()" class="">
+        <i class="fa fa-user-secret fa-lg"></i> Connect Anonymously
+      </button>
+    </mat-card>
+    <hr>
+    -->
+
+
+
+    <mat-card>
+      <user-form></user-form>
+    </mat-card>
+
+</div>
+
+<ng-template #alreadyLoggedIn>
+  <p class="text-success">
+    Already logged in!
+  </p>
+</ng-template>

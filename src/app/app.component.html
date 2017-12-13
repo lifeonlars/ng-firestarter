@@ -1,12 +1,93 @@
+<!--<top-nav></top-nav>
+<mat-sidenav-container
+    class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <p><button mat-button (click)="sidenav.open()">Open</button></p>
+    <p>Closed due to: {{reason}}</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+
+
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
+    <header>
+        <h1>ngFireStarter</h1>
+    </header>
+
+    <mat-nav-list class="app-nav-list">
+      <a mat-list-item *ngFor="let view of views" routerLink="/{{view.link}}" (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>{{view.icon}}</mat-icon>
+          <span flex></span>
+          <span mat-line>{{view.name}}</span>
+      </a>
+    </mat-nav-list>
+
+
+    <mat-toolbar>
+     <mat-toolbar-row>
+        <span>Account</span>
+        <span class="app-toolbar-filler"></span>
+        <mat-icon class="example-icon">account_circle</mat-icon>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <button mat-raised-button color="accent" class="app-sidebar-button" routerLink="/login">
+            <mat-icon class="example-icon">verified_user</mat-icon>
+            Login
+           </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+  </mat-sidenav>
+
+
+
+  <mat-toolbar color="primary">
+    <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+      <i class="material-icons">menu</i>
+    </button>
+    <span class="title">{{title}}</span>
+    <span class="app-toolbar-filler"></span>
+    <button mat-icon-button [mat-menu-trigger-for]="menu" align="end">
+       <img class="mat-toolbar-avatar" [src]="'assets/images/avatar.png'">
+    </button>
+    <mat-menu #menu="matMenu" x-position="before" y-position="below">
+        <p>You are logged in using <strong></strong></p>
+        <button mat-button (click)="logout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</mat-sidenav-container>
+
+<!-- Material Fab--><!--
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button mat-fab><mat-icon>check circle</mat-icon></button>
+</span> -->
+<!-- /Material Fab-->
+
+
+<!--
 <div id="wrapper">
 
   <top-nav></top-nav>
 
   <div class="content columns">
     <aside class="column is-2 is-offset-1">
-      <!--
-        This is broken for some reason at the moment
-        <user-profile></user-profile> -->
+
+
+        <user-profile></user-profile>
     </aside>
 
     <main class="column is-8">
@@ -29,4 +110,4 @@
   </div>
 
 
-</div>
+</div>-->

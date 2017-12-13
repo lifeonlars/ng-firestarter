@@ -1,5 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './styles/material-theme.scss';
 
 @import "./styles/loading.scss";
 @import "./styles/firestarter.scss";
+
+
+
+.app-content {
+    display: flex;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+
+.app-nav-list .mat-list-item-content  {
+  height: 56px;
+  color: #515151;
+}
+
+.app-nav-list .mat-list-item-content:hover,
+.app-nav-list .mat-list-item-content.mat-list-item-focus,
+.app-nav-list .mat-list-item-content:active,
+.app-nav-list .mat-list-item-content:focus {
+  background-color: mat-color($accent, 50);
+  border-right: 4px solid mat-color($accent, A400);
+}
+
+.mat-nav-list.app-nav-list .mat-list-item .mat-list-text > * {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.mat-nav-list.app-nav-list .mat-list-item .mat-list-icon {
+  color: #c7c6c2;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}

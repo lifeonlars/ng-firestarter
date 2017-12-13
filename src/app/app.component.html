@@ -37,7 +37,7 @@
         <mat-icon class="example-icon">account_circle</mat-icon>
       </mat-toolbar-row>
       <mat-toolbar-row>
-        <button mat-raised-button color="accent" class="app-sidebar-button" routerLink="/login">
+        <button mat-raised-button color="accent" class="app-sidebar-button" routerLink="/login" (click)="sidenav.toggle()">
             <mat-icon class="example-icon">verified_user</mat-icon>
             Login
            </button>
@@ -48,7 +48,6 @@
   </mat-sidenav>
 
 
-
   <mat-toolbar color="primary">
     <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
       <i class="material-icons">menu</i>
@@ -56,11 +55,37 @@
     <span class="title">{{title}}</span>
     <span class="app-toolbar-filler"></span>
     <button mat-icon-button [mat-menu-trigger-for]="menu" align="end">
-       <img class="mat-toolbar-avatar" [src]="'assets/images/avatar.png'">
+      <div *ngIf="auth.user | async as user">
+        <img class="mat-toolbar-avatar" [src]="user.photoURL || 'assets/images/avatar.png'">
+      </div>
     </button>
-    <mat-menu #menu="matMenu" x-position="before" y-position="below">
-        <p>You are logged in using <strong></strong></p>
-        <button mat-button (click)="logout()">Logout</button>
+    <mat-menu #menu="matMenu" x-position="before" yPosition="below">
+        <span mat-menu-item *ngIf="auth.user | async as user">
+          {{user.displayName}}
+        </span>
+        <button mat-menu-item>
+            <mat-icon> account_box </mat-icon>
+            <span> Profile </span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon> settings </mat-icon>
+            <span> Settings </span>
+        </button>
+        <button *ngIf="auth.user | async; then authenticated else guest">
+
+        </button>
+        <ng-template #authenticated>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon> exit_to_app </mat-icon>
+            <span> Logout </span>
+        </button>
+        </ng-template>
+        <ng-template #guest>
+          <button mat-menu-item routerLink="/login">
+              <mat-icon> lock_open </mat-icon>
+              <span>Login </span>
+          </button>
+        </ng-template>
     </mat-menu>
   </mat-toolbar>
 

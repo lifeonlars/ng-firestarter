@@ -7,7 +7,16 @@ import { AuthService } from './core/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+
+
+
 export class AppComponent {
+
+  constructor(public auth: AuthService) { }
+
+  logout() {
+    this.auth.signOut();
+  }
 
   title = 'ngFireStarter';
   views: Object[] = [

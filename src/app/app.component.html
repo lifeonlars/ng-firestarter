@@ -58,6 +58,9 @@
       <div *ngIf="auth.user | async as user">
         <img class="mat-toolbar-avatar" [src]="user.photoURL || 'assets/images/avatar.png'">
       </div>
+      <div *ngIf="!(auth.user | async);">
+        <img class="mat-toolbar-avatar" src="assets/images/avatar.png">
+      </div>
     </button>
     <mat-menu #menu="matMenu" x-position="before" yPosition="below">
         <span mat-menu-item *ngIf="auth.user | async as user">
@@ -71,14 +74,14 @@
             <mat-icon> settings </mat-icon>
             <span> Settings </span>
         </button>
-        <button *ngIf="auth.user | async; then authenticated else guest">
+        <span *ngIf="auth.user | async; then authenticated else guest">
 
-        </button>
+        </span>
         <ng-template #authenticated>
-        <button mat-menu-item (click)="logout()">
-            <mat-icon> exit_to_app </mat-icon>
-            <span> Logout </span>
-        </button>
+          <button mat-menu-item (click)="logout()">
+              <mat-icon> exit_to_app </mat-icon>
+              <span> Logout </span>
+          </button>
         </ng-template>
         <ng-template #guest>
           <button mat-menu-item routerLink="/login">

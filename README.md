@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# ngFireStarter: Angular + Firebase + Angular Material PWA Starter
+# ngFireStarter: Angular + Firebase + Material PWA Starter
 
 An Angular PWA starter powered by Firebase and Angular.
 
@@ -76,43 +76,7 @@ An Angular PWA starter powered by Firebase and Angular.
  - Avoid being too generic, pick a specific niche that allows it to appear as an actual app
 
 
-## Usage
 
-Create an account at https://firebase.google.com/
-
-- Enable authentication with email, Google and Facebook via console => Authentication => Sign in method
-- Enable Firestore under console => Database
-- Set database permissions to enable read/write access for authenticated users
-
-- `git clone https://github.com/lifeonlars/angular-firestarter.git firestarter`
-- `cd firestarter`
-- `npm install`
-
-Create the environment files below in `src/environments/`.
-
-#### environment.ts
-```typescript
-export const environment = {
-    production: false,
-    firebaseConfig: {
-        apiKey: 'APIKEY',
-        authDomain: 'DEV-APP.firebaseapp.com',
-        databaseURL: 'https://DEV-APP.firebaseio.com',
-        projectId: 'DEV-APP',
-        storageBucket: 'DEV-APP.appspot.com',
-        messagingSenderId: '123456789'
-    }
-};
-```
-#### environment.prod.ts
-```typescript
-export const environment = {
-    production: true,
-    firebaseConfig: {
-        // same as above, or use a different firebase project to isolate environments
-    }
-};
-```
 
 ## Folder Stucture and Naming Conventions
 

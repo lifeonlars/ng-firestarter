@@ -1,4 +1,7 @@
 
+.app{
+    height: 100vh;    // emmet h100vh
+}
 
 .mat-toolbar-avatar {
   height: 40px;
@@ -83,22 +86,22 @@
   margin: 10px;
 }
 
-.mat-slider-horizontal {
-  width: 300px;
-}
+// .mat-slider-horizontal {
+//   width: 300px;
+// }
 
-.mat-slider-vertical {
-  height: 300px;
-}
+// .mat-slider-vertical {
+//   height: 300px;
+// }
 
-md-chip {
-  max-width: 200px;
-}
+// md-chip {
+//   max-width: 200px;
+// }
 
-.app-sidebar-button {
-  width: inherit;
-}
+// .app-sidebar-button {
+//   width: inherit;
+// }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
+// .example-spacer {
+//   flex: 1 1 auto;
+// }

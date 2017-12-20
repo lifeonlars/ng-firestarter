@@ -14,28 +14,27 @@ export class AppComponent {
 
   constructor(public auth: AuthService) { }
 
-  logout() {
-    this.auth.signOut();
-  }
-
   title = 'ngFireStarter';
   views: Object[] = [
     {
-      name: "Locations",
-      icon: "map",
-      link: "/locations"
+      name: 'Locations',
+      icon: 'map',
+      link: '/locations'
     },
     {
-      name: "Events",
-      icon: "event",
-      link: "/events"
+      name: 'Events',
+      icon: 'event',
+      link: '/events'
     },
     {
-      name: "Uploads",
-      icon: "file_upload",
-      link: "/uploads"
+      name: 'Uploads',
+      icon: 'file_upload',
+      link: '/uploads'
     }
   ];
 
+  logout() {
+    this.auth.signOut();
+  }
 
 }

@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,8 +24,6 @@ import { EventsModule } from './events/events.module';
 import { UploadModule } from './uploads/shared/upload.module';
 import { LayoutModule } from './layout/shared/layout.module';
 import { UserModule } from './user/user.module';
-
-
 // END: ngFireStarter
 
 // Environment Variables (Firebase API keys etc.)
@@ -32,10 +31,8 @@ import { environment } from '../environments/environment';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
-export const firebaseConfig = environment.firebaseConfig;
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
-
+export const firebaseConfig = environment.firebaseConfig;
 
 
 @NgModule({
@@ -47,6 +44,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     BrowserModule,
     FormsModule,
     CoreModule,
+    FlexLayoutModule,
     SharedModule,
     LocationsModule,
     EventsModule,
